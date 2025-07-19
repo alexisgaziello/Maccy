@@ -22,10 +22,10 @@ struct WrappingTextView: Layout {
       // If we need to scale down the width, recalculate height based on targetRatio
       width = maxWidth
       let scaledSize = text.sizeThatFits(.init(width: maxWidth, height: nil))
-      height = min(scaledSize.height, maxHeight)
+      height = scaledSize.height
     } else {
       width = textSize.width
-      height = min(textSize.height, maxHeight)
+      height = textSize.height
     }
 
     return CGSize(width: width, height: height)
